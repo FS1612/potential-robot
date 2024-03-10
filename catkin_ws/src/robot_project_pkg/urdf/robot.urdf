@@ -1,69 +1,29 @@
 <?xml version="1.0"?>
-<robot name="vacuum_robot">
+<robot name="my_robot">
+
 
   <!-- Base link -->
   <link name="base_link">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- Origin and orientation of the base link -->
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <!-- Geometry of the base link (a cylinder) -->
       <geometry>
-        <cylinder radius="0.5"length="0.2"/>
+        <cylinder radius="0.1" length="0.1"/>
       </geometry>
     </visual>
   </link>
 
-  <!-- Ruota sinistra -->
-  <link name="left_wheel">
+
+  <link name="ruota">
     <visual>
-    <!-- Origine e orientamento della ruota sinistra -->
-    <!--rpy ==> roll pitch,yaw e xyz sono gli offset-->
-      <origin xyz="0.2 0.25 0" rpy="0 0 0"/>
-      <!-- Geometria della ruota (un cilindro) -->
+      <!-- Origin and orientation of the base link -->
+      <origin xyz="0.4 0 0" rpy="1.5708 0 0"/>
+      <!-- Geometry of the base link (a cylinder) -->
       <geometry>
-        <cylinder radius="0.1" length="0.05"/>
+        <cylinder radius="0.1" length="0.1"/>
       </geometry>
     </visual>
   </link>
-
-  <!-- Ruota destra -->
-  <link name="right_wheel">
-    <visual>
-    <!-- Origine e orientamento della ruota sinistra -->
-    <!--rpy ==> roll pitch,yaw e xyz sono gli offset-->
-      <origin xyz="0.2 -0.25 0" rpy="0 0 0"/>
-      <geometry>
-      <!-- Geometria della ruota (un cilindro) -->
-        <cylinder radius="0.1" length="0.05"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <!-- Joint ruote -->
-  <!-- Joint della ruota sinistra -->
-  <joint name="left_wheel_joint" type="continuous">
-  <!-- Collega la base link alla ruota sinistra -->
-    <parent link="base_link"/>
-    <child link="left_wheel"/>
-    <!-- Origine e orientamento del giunto -->
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <!-- Asse di rotazione della ruota -->
-    <axis xyz="0 1 0"/>
-    <!-- Proprietà dinamiche del giunto -->
-    <dynamics damping="0.1"/>
-  </joint>
-  
-  
-  <!-- Joint della ruota destra -->
-  <joint name="right_wheel_joint" type="continuous">
-  <!-- Collega la base link alla ruota sinistra -->
-    <parent link="base_link"/>
-    <child link="right_wheel"/>
-    <!-- Origine e orientamento del giunto -->
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <!-- Asse di rotazione della ruota -->
-    <axis xyz="0 1 0"/>
-    <!-- Proprietà dinamiche del giunto -->
-    <dynamics damping="0.1"/>
-  </joint>
-
 </robot>
 
