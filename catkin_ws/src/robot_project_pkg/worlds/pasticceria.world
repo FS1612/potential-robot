@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<world name="pasticceria_world">
+  <!-- Include il modello del terreno -->
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  
+  <!-- Aggiungi il modello della pasticceria -->
+  <include>
+    <uri>model://bakery</uri>
+    <!-- Specifica la posizione e l'orientamento della pasticceria -->
+    <pose>0 0 0 0 0 0</pose>
+  </include>
+</world>
+

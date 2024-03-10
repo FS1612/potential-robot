@@ -1,11 +1,27 @@
 <?xml version="1.0" ?>
 <launch>
-    <arg name="model" />
-    <param name="robot_description" textfile="$(find robot_project_pkg)/urdf/robot.urdf"/>
 
+    <!-- Imposta l'ambiente variabile TURTLEBOT3_MODEL -->
+    <env name="TURTLEBOT3_MODEL" value="waffle_pi" />
+    <!-- per parsare i file xacro in urdf -->
+    <!-- $(nome pacchetto di progetto dove si trovano le cartelle) -->
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_project_pkg)/urdf/robot.urdf.xacro'"  />
+    <param name="/use_sim_time" value="true" />
+<!-- Avvia Gazebo con il mondo di Turtlebot -->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"/>
+    
+
+ <!-- Carica il modello URDF del robot in Gazebo -->
+    <node name="spawn_cleaner" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model cleaner" />
+        
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+    
+    <!-- Nodo robot_state_publisher che pubblica le trasformazioni tf tra i diversi link -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
-
+    <!-- Esegui RViz -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_project_pkg)/robot.rviz" required="true" />
 </launch>
 
