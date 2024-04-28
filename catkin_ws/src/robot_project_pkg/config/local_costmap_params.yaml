@@ -1,20 +1,21 @@
 local_costmap:
   global_frame: "odom"
   robot_base_frame: "base_link"
-  update_frequency: 10.0  # Frequenza di aggiornamento
-  publish_frequency: 5.0  # Frequenza di pubblicazione
-  width: 20.0  # Larghezza del costmap locale in metri
-  height: 20.0  # Altezza del costmap locale in metri
-  resolution: 0.05  # Risoluzione in metri per cella
-  origin_x: -10.0  # Origine in x per centrare il costmap locale
-  origin_y: -10.0  # Origine in y per centrare il costmap locale
-  static_map: false  # Il costmap segue il robot
-  rolling_window: true  # Rolling window abilitato
-  inflation_radius: 0.3  # Inflazione per evitare ostacoli
+  update_frequency: 10.0
+  publish_frequency: 5.0
+  width: 30.0
+  height: 30.0
+  resolution: 0.05
+  origin_x: -15.0
+  origin_y: -15.0
+  static_map: false
+  rolling_window: true
+  inflation_radius: 0.01
   footprint:
-    - [0.5, 0.5]
-    - [0.5, -0.5]
-    - [-0.5, -0.5]
-    - [-0.5, 0.5]  # Footprint del robot
-  footprint_padding: 0.1  # Padding aggiuntivo
+  - [0.5, 0.5]
+  - [0.5, -0.5]
+  - [-0.5, -0.5]
+  - [-0.5, 0.5]
+
+  footprint_padding: 0.01  # Padding aggiuntivo per evitare collisioni
 
