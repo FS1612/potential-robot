@@ -242,9 +242,18 @@ private:
                 }
             }
 
-            for (const auto &point : scan_points) {
-                map_image.at<cv::Vec3b>(point) = cv::Vec3b(0, 255, 0); // Verde per i dati del laser
-            }
+            if (!scan_points.empty()) {
+            // Aggiungi il punto del robot all'inizio e alla fine per chiudere il poligono
+            cv::Point robot_point = stageToOpenCV(robot_x, robot_y, width, height);
+            scan_points.insert(scan_points.begin(), robot_point); // Aggiungi all'inizio
+            scan_points.push_back(robot_point); // Aggiungi alla fine
+
+            // Crea il poligono con i punti della scansione
+            const std::vector<std::vector<cv::Point>> polygon = {scan_points};
+
+            // Riempi il poligono con un colore specifico (verde)
+            cv::fillPoly(map_image, polygon, cv::Scalar(0, 255, 0));
+        }
             
         }
         // Disegna il robot

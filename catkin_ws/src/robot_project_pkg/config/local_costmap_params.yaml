@@ -10,12 +10,14 @@ local_costmap:
   origin_y: -15.0
   static_map: false
   rolling_window: true
-  inflation_radius: 0.01
-  footprint:
+  inflation_radius: 0.1
+ 
+footprint:
   - [0.5, 0.5]
   - [0.5, -0.5]
   - [-0.5, -0.5]
   - [-0.5, 0.5]
+  
+footprint_padding: 0.1  # Padding aggiuntivo per evitare collisioni
 
-  footprint_padding: 0.01  # Padding aggiuntivo per evitare collisioni
 
