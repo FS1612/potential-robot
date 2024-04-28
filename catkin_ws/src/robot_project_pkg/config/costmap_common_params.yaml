@@ -1,0 +1,18 @@
+costmap_common_params:
+  transform_tolerance: 0.2  # Tolleranza per le trasformazioni TF
+  map_type: "costmap"  # Tipo di mappa (costmap o voxel)
+  track_unknown_space: true  # Traccia gli spazi sconosciuti
+  obstacle_range: 3.0  # Massima distanza per rilevamento ostacoli
+  raytrace_range: 3.5  # Distanza massima per raytracing
+  observation_sources: laser_scan  # Fonte di osservazione per ostacoli
+  laser_scan:
+    data_type: "LaserScan"
+    topic: "/base_scan"  # Assicurati che sia corretto
+    expected_update_rate: 10.0  # Frequenza di aggiornamento
+    max_obstacle_height: 2.0  # Altezza massima per rilevamento ostacoli
+    min_obstacle_height: 0.1  # Altezza minima per rilevamento ostacoli
+    marking: true  # Consente di marcare ostacoli
+    clearing: true  # Consente di rimuovere ostacoli
+  inflation_radius: 0.5  # Raggio di inflazione
+  cost_scaling_factor: 10.0  # Fattore di scala per il costo degli ostacoli
+

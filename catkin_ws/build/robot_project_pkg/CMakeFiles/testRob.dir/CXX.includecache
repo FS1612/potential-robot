@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fra/gitHub/potential-robot/catkin_ws/src/robot_project_pkg/code/testRob.cpp
+urdf_parser/urdf_parser.h
+-
+

@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH='/home/fra/gitHub/potential-robot/catkin_ws/devel:/opt/ros/noetic:/usr/include/opencv4/opencv2'
 export PWD='/home/fra/gitHub/potential-robot/catkin_ws/build'

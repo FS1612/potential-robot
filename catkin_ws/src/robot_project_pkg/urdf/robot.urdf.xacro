@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="cleaner">
-<!-- $(nome pacchetto di progetto dove si trovano le cartelle)-->
-    <xacro:include filename="$(find robot_project_pkg)/urdf/robot_core.xacro"/>
-</robot>
-
-

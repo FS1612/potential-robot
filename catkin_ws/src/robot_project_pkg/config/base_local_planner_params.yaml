@@ -1,0 +1,16 @@
+TrajectoryPlannerROS:
+  acc_lim_th: 2.0  # Limite di accelerazione angolare
+  acc_lim_x: 1.5  # Limite di accelerazione lineare
+  max_vel_x: 0.5  # Velocità lineare massima
+  min_vel_x: 0.1  # Velocità lineare minima
+  max_rotational_vel: 0.7  # Velocità rotazionale massima
+  min_in_place_rotational_vel: 0.3  # Velocità minima per rotazione in loco
+  escape_vel: -0.1  # Velocità per uscire da situazioni bloccate
+  sim_time: 1.5  # Tempo di simulazione
+  sim_granularity: 0.02  # Granularità della simulazione
+  vx_samples: 6  # Numero di campioni di velocità lineare
+  vtheta_samples: 20  # Numero di campioni di velocità angolare
+  oscillation_reset_dist: 0.3  # Distanza per il reset delle oscillazioni
+  prune_plan: true  # Permette di rimuovere parti inutili del piano
+  meter_scoring: true  # Utilizza metri anziché celle per il calcolo del costo
+

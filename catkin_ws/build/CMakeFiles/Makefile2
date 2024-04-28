@@ -294,7 +294,9 @@ open_manipulator_dependencies/roboticsgroup_gazebo_plugins/clean: open_manipulat
 # Directory level rules for directory robot_project_pkg
 
 # Recursive "all" directory target.
-robot_project_pkg/all:
+robot_project_pkg/all: robot_project_pkg/CMakeFiles/auto.dir/all
+robot_project_pkg/all: robot_project_pkg/CMakeFiles/Mapviewer.dir/all
+robot_project_pkg/all: robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/all
 
 .PHONY : robot_project_pkg/all
 
@@ -304,16 +306,21 @@ robot_project_pkg/preinstall:
 .PHONY : robot_project_pkg/preinstall
 
 # Recursive "clean" directory target.
+robot_project_pkg/clean: robot_project_pkg/CMakeFiles/auto.dir/clean
+robot_project_pkg/clean: robot_project_pkg/CMakeFiles/Mapviewer.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/rviz_generate_messages_eus.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/rviz_generate_messages_nodejs.dir/clean
+robot_project_pkg/clean: robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/rviz_generate_messages_py.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/clean
+robot_project_pkg/clean: robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/rviz_generate_messages_cpp.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/rviz_generate_messages_lisp.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/map_msgs_generate_messages_lisp.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/map_msgs_generate_messages_py.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/map_msgs_generate_messages_eus.dir/clean
 robot_project_pkg/clean: robot_project_pkg/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean
+robot_project_pkg/clean: robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/clean
 
 .PHONY : robot_project_pkg/clean
 
@@ -569,8 +576,6 @@ turtlebot3_manipulation/turtlebot3_manipulation_gui/preinstall:
 
 # Recursive "clean" directory target.
 turtlebot3_manipulation/turtlebot3_manipulation_gui/clean: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/clean
-turtlebot3_manipulation/turtlebot3_manipulation_gui/clean: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
-turtlebot3_manipulation/turtlebot3_manipulation_gui/clean: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
 
 .PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/clean
 
@@ -861,7 +866,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=5,6 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=11,12 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -888,7 +893,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=3,4 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=9,10 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -915,7 +920,7 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=9,10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=15,16 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -942,7 +947,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=7,8 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=13,14 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -996,7 +1001,7 @@ turtlebot3/turtlebot3/CMakeFiles/_catkin_empty_exported_target.dir/clean:
 open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/all:
 	$(MAKE) -f open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/build.make open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/depend
 	$(MAKE) -f open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/build.make open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=11,12 "Built target roboticsgroup_gazebo_disable_link_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=17,18 "Built target roboticsgroup_gazebo_disable_link_plugin"
 .PHONY : open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_disable_link_plugin.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1023,7 +1028,7 @@ open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgr
 open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/all:
 	$(MAKE) -f open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/build.make open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/depend
 	$(MAKE) -f open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/build.make open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=13,14 "Built target roboticsgroup_gazebo_mimic_joint_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=19,20 "Built target roboticsgroup_gazebo_mimic_joint_plugin"
 .PHONY : open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/roboticsgroup_gazebo_mimic_joint_plugin.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3433,7 +3438,7 @@ turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/all: turtleb
 turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/all: turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_msgs_generate_messages_py.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/build.make turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/build.make turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=15,16 "Built target turtlebot3_diagnostics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=21,22 "Built target turtlebot3_diagnostics"
 .PHONY : turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3523,7 +3528,7 @@ turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_no
 turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_nodejs.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/_turtlebot3_example_generate_messages_check_deps_Turtlebot3Action.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_nodejs.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_nodejs.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_nodejs.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=41,42,43,44,45,46,47 "Built target turtlebot3_example_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=47,48,49,50,51,52,53 "Built target turtlebot3_example_generate_messages_nodejs"
 .PHONY : turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4076,7 +4081,7 @@ turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cp
 turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cpp.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/_turtlebot3_example_generate_messages_check_deps_Turtlebot3Action.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cpp.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cpp.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cpp.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=19,20,21,22,23,24,25 "Built target turtlebot3_example_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=25,26,27,28,29,30,31 "Built target turtlebot3_example_generate_messages_cpp"
 .PHONY : turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4112,7 +4117,7 @@ turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eu
 turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eus.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/_turtlebot3_example_generate_messages_check_deps_Turtlebot3Action.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eus.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eus.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eus.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=26,27,28,29,30,31,32,33 "Built target turtlebot3_example_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=32,33,34,35,36,37,38,39 "Built target turtlebot3_example_generate_messages_eus"
 .PHONY : turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4202,7 +4207,7 @@ turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_li
 turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_lisp.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/_turtlebot3_example_generate_messages_check_deps_Turtlebot3Action.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_lisp.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_lisp.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_lisp.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=34,35,36,37,38,39,40 "Built target turtlebot3_example_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=40,41,42,43,44,45,46 "Built target turtlebot3_example_generate_messages_lisp"
 .PHONY : turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4238,7 +4243,7 @@ turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py
 turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/_turtlebot3_example_generate_messages_check_deps_Turtlebot3Action.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py.dir/build.make turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=48,49,50,51,52,53,54,55 "Built target turtlebot3_example_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=54,55,56,57,58,59,60,61 "Built target turtlebot3_example_generate_messages_py"
 .PHONY : turtlebot3/turtlebot3_example/CMakeFiles/turtlebot3_example_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4346,7 +4351,7 @@ turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/all: 
 turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/build.make turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/depend
 	$(MAKE) -f turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/build.make turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=56,57 "Built target turtlebot3_fake_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=62,63 "Built target turtlebot3_fake_node"
 .PHONY : turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4444,7 +4449,7 @@ turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: tu
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3/turtlebot3_example/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/depend
 	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=17,18 "Built target turtlebot3_drive"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=23,24 "Built target turtlebot3_drive"
 .PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4535,7 +4540,7 @@ turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_ma
 turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_manipulation_bringup.dir/all: turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_manipulation_bringup.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_manipulation_bringup.dir/depend
 	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_manipulation_bringup.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_manipulation_bringup.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=58,59 "Built target turtlebot3_manipulation_bringup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=64,65 "Built target turtlebot3_manipulation_bringup"
 .PHONY : turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/turtlebot3_manipulation_bringup.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5126,7 +5131,7 @@ turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/all: open_manipula
 turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/all: open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/build.make turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/depend
 	$(MAKE) -f turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/build.make turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=1,2 "Built target flat_world_imu_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=7,8 "Built target flat_world_imu_node"
 .PHONY : turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5145,6 +5150,60 @@ flat_world_imu_node: turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.d
 turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/clean:
 	$(MAKE) -f turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/build.make turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/clean
 .PHONY : turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir/clean
+
+#=============================================================================
+# Target rules for target robot_project_pkg/CMakeFiles/auto.dir
+
+# All Build rule for target.
+robot_project_pkg/CMakeFiles/auto.dir/all:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/depend
+	$(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=5,6 "Built target auto"
+.PHONY : robot_project_pkg/CMakeFiles/auto.dir/all
+
+# Build rule for subdir invocation for target.
+robot_project_pkg/CMakeFiles/auto.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/auto.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+.PHONY : robot_project_pkg/CMakeFiles/auto.dir/rule
+
+# Convenience name for target.
+auto: robot_project_pkg/CMakeFiles/auto.dir/rule
+
+.PHONY : auto
+
+# clean rule for target.
+robot_project_pkg/CMakeFiles/auto.dir/clean:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/clean
+.PHONY : robot_project_pkg/CMakeFiles/auto.dir/clean
+
+#=============================================================================
+# Target rules for target robot_project_pkg/CMakeFiles/Mapviewer.dir
+
+# All Build rule for target.
+robot_project_pkg/CMakeFiles/Mapviewer.dir/all:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/Mapviewer.dir/build.make robot_project_pkg/CMakeFiles/Mapviewer.dir/depend
+	$(MAKE) -f robot_project_pkg/CMakeFiles/Mapviewer.dir/build.make robot_project_pkg/CMakeFiles/Mapviewer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=1,2 "Built target Mapviewer"
+.PHONY : robot_project_pkg/CMakeFiles/Mapviewer.dir/all
+
+# Build rule for subdir invocation for target.
+robot_project_pkg/CMakeFiles/Mapviewer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/Mapviewer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+.PHONY : robot_project_pkg/CMakeFiles/Mapviewer.dir/rule
+
+# Convenience name for target.
+Mapviewer: robot_project_pkg/CMakeFiles/Mapviewer.dir/rule
+
+.PHONY : Mapviewer
+
+# clean rule for target.
+robot_project_pkg/CMakeFiles/Mapviewer.dir/clean:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/Mapviewer.dir/build.make robot_project_pkg/CMakeFiles/Mapviewer.dir/clean
+.PHONY : robot_project_pkg/CMakeFiles/Mapviewer.dir/clean
 
 #=============================================================================
 # Target rules for target robot_project_pkg/CMakeFiles/rviz_generate_messages_eus.dir
@@ -5201,6 +5260,33 @@ robot_project_pkg/CMakeFiles/rviz_generate_messages_nodejs.dir/clean:
 .PHONY : robot_project_pkg/CMakeFiles/rviz_generate_messages_nodejs.dir/clean
 
 #=============================================================================
+# Target rules for target robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir
+
+# All Build rule for target.
+robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/depend
+	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num= "Built target moveit_ros_manipulation_gencfg"
+.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
+
+# Build rule for subdir invocation for target.
+robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+
+# Convenience name for target.
+moveit_ros_manipulation_gencfg: robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+
+.PHONY : moveit_ros_manipulation_gencfg
+
+# clean rule for target.
+robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
+.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
+
+#=============================================================================
 # Target rules for target robot_project_pkg/CMakeFiles/rviz_generate_messages_py.dir
 
 # All Build rule for target.
@@ -5253,6 +5339,33 @@ map_msgs_generate_messages_cpp: robot_project_pkg/CMakeFiles/map_msgs_generate_m
 robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/clean:
 	$(MAKE) -f robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/build.make robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/clean
 .PHONY : robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir
+
+# All Build rule for target.
+robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/all:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/depend
+	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num= "Built target moveit_ros_planning_gencfg"
+.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/all
+
+# Build rule for subdir invocation for target.
+robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
+
+# Convenience name for target.
+moveit_ros_planning_gencfg: robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
+
+.PHONY : moveit_ros_planning_gencfg
+
+# clean rule for target.
+robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/clean:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
+.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
 
 #=============================================================================
 # Target rules for target robot_project_pkg/CMakeFiles/rviz_generate_messages_cpp.dir
@@ -5417,6 +5530,33 @@ robot_project_pkg/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean:
 .PHONY : robot_project_pkg/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
+# Target rules for target robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir
+
+# All Build rule for target.
+robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/all:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/build.make robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/depend
+	$(MAKE) -f robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/build.make robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=3,4 "Built target ObstacleVisualizer"
+.PHONY : robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/all
+
+# Build rule for subdir invocation for target.
+robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
+.PHONY : robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/rule
+
+# Convenience name for target.
+ObstacleVisualizer: robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/rule
+
+.PHONY : ObstacleVisualizer
+
+# clean rule for target.
+robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/clean:
+	$(MAKE) -f robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/build.make robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/clean
+.PHONY : robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/clean
+
+#=============================================================================
 # Target rules for target turtlebot3/turtlebot3_description/CMakeFiles/turtlebot3_description_xacro_generated_to_devel_space_.dir
 
 # All Build rule for target.
@@ -5533,11 +5673,11 @@ turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipu
 turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/octomap_msgs_generate_messages_eus.dir/all
 turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/shape_msgs_generate_messages_py.dir/all
 turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: turtlebot3_manipulation/turtlebot3_manipulation_bringup/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/all
+turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
+turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all: robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/all
 	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/depend
 	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=60,61,62,63,64,65,66,67,68 "Built target turtlebot3_manipulation_gui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num=66,67,68,69,70,71,72,73,74 "Built target turtlebot3_manipulation_gui"
 .PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5556,60 +5696,6 @@ turtlebot3_manipulation_gui: turtlebot3_manipulation/turtlebot3_manipulation_gui
 turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/clean:
 	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/clean
 .PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir
-
-# All Build rule for target.
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all:
-	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/depend
-	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num= "Built target moveit_ros_manipulation_gencfg"
-.PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
-.PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-
-# Convenience name for target.
-moveit_ros_manipulation_gencfg: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-
-.PHONY : moveit_ros_manipulation_gencfg
-
-# clean rule for target.
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean:
-	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
-.PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir
-
-# All Build rule for target.
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/all:
-	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/depend
-	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles --progress-num= "Built target moveit_ros_planning_gencfg"
-.PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles 0
-.PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
-
-# Convenience name for target.
-moveit_ros_planning_gencfg: turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
-
-.PHONY : moveit_ros_planning_gencfg
-
-# clean rule for target.
-turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/clean:
-	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
-.PHONY : turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,27 +1,69 @@
-<?xml version="1.0" ?>
+
 <launch>
-
-    <!-- Imposta l'ambiente variabile TURTLEBOT3_MODEL -->
-    <env name="TURTLEBOT3_MODEL" value="waffle_pi" />
-    <!-- per parsare i file xacro in urdf -->
-    <!-- $(nome pacchetto di progetto dove si trovano le cartelle) -->
-
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robot_project_pkg)/urdf/robot.urdf.xacro'"  />
+    <!-- Usa il tempo di simulazione -->
     <param name="/use_sim_time" value="true" />
-<!-- Avvia Gazebo con il mondo di Turtlebot -->
-    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"/>
-    
+	
+	
+    <node name="map_server" pkg="map_server" type="map_server" 
+      args="$(find robot_project_pkg)/worlds/cappero_laser_odom_diag_2020-05-06-16-26-03.png 0.05"
+      output="screen" />
 
- <!-- Carica il modello URDF del robot in Gazebo -->
-    <node name="spawn_cleaner" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-urdf -param robot_description -model cleaner" />
+
+          
+    <!-- Avvia il simulatore Stage -->
+    <node name="stageros" pkg="stage_ros" type="stageros" 
+          args=" $(find robot_project_pkg)/worlds/cappero_laser_odom_diag_obstacle_2020-05-06-16-26-03.world" 
+          output="screen">
+        <param name="publish_scan" value="true" />
+    </node>
+     
+
+
+     <!-- Avvia il nodo move_base per la navigazione -->
+    <node pkg="move_base" type="move_base" name="move_base" output="screen">
+        <!-- Carica i parametri comuni del costmap -->
+        <rosparam command="load" file="$(find robot_project_pkg)/config/costmap_common_params.yaml" ns="global_costmap" />
+        <rosparam command="load" file="$(find robot_project_pkg)/config/costmap_common_params.yaml" ns="local_costmap" />
+
+        <!-- Carica i parametri del costmap globale -->
+        <rosparam command="load" file="$(find robot_project_pkg)/config/global_costmap_params.yaml"  />
+
+        <!-- Carica i parametri del costmap locale -->
+        <rosparam command="load" file="$(find robot_project_pkg)/config/local_costmap_params.yaml"  />
+
+        <!-- Carica i parametri del planner locale -->
+        <rosparam command="load" file="$(find robot_project_pkg)/config/base_local_planner_params.yaml" />
+    </node>
+   <!-- Avvia il nodo amcl per la localizzazione -->
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+      <remap from="scan" to="base_scan" />
+      <param name="odom_model_type" value="diff"/>
+      <param name="odom_alpha1" value="0.2"/>
+      <param name="odom_alpha2" value="0.2"/>
+      <param name="odom_alpha3" value="0.2"/>
+      <param name="odom_alpha4" value="0.2"/>
+      <param name="odom_alpha5" value="0.2"/>
+      <param name="global_frame" value="map"/>
+      <param name="odom_frame" value="odom"/>
+    </node>
+    
         
-    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+
     
-    <!-- Nodo robot_state_publisher che pubblica le trasformazioni tf tra i diversi link -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+      
 
-    <!-- Esegui RViz -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_project_pkg)/robot.rviz" required="true" />
+    <!-- Avvia il visualizzatore della mappa -->
+    <node name="Mapviewer" pkg="robot_project_pkg" type="Mapviewer" output="screen"/>
+
+    <!-- Avvia il visualizzatore di ostacoli -->
+    <node name="ObstacleVisualizer" pkg="robot_project_pkg" type="ObstacleVisualizer" output="screen"/>
+
+    
+    
+
+
+    <!-- Avvia RViz con la configurazione specificata -->
+    <node name="rviz" pkg="rviz" type="rviz" 
+          args="-d $(find stage_ros)/rviz/stage.rviz" respawn="false" 
+          output="screen"/>
 </launch>
-
