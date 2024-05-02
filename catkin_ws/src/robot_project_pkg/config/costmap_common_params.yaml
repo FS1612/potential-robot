@@ -1,19 +1,15 @@
-# Costmap comune per entrambi i costmap
 costmap_common_params:
-  transform_tolerance: 0.5  # Tolleranza per le trasformazioni TF
+  transform_tolerance: 0.2  # Tolleranza per le trasformazioni TF
   map_type: costmap  # Tipo di costmap
   track_unknown_space: true  # Consente di tracciare gli spazi sconosciuti
-  obstacle_range: 4  # Portata massima degli ostacoli
-  raytrace_range: 4  # Portata di raytracing per clearing
+  obstacle_range: 4.0  # Portata massima per rilevare ostacoli
+  raytrace_range: 4.0  # Portata per rimuovere ostacoli (clearing)
   observation_sources: laser_scan
   laser_scan:
     data_type: LaserScan
     topic: /base_scan
-    expected_update_rate: 10.0  # Frequenza di aggiornamento
+    expected_update_rate: 5.0  # Frequenza di aggiornamento del laser
     max_obstacle_height: 2.0  # Altezza massima degli ostacoli
-    min_obstacle_height: 0.1  # Altezza minima degli ostacoli
-    marking: true  # Consente di marcare ostacoli
+    min_obstacle_height: 1.0  # Altezza minima degli ostacoli
+    marking: true  # Consente di marcare gli ostacoli
     clearing: true  # Consente di rimuovere ostacoli
-
-
-

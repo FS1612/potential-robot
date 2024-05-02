@@ -1,21 +1,40 @@
-
 TrajectoryPlannerROS:
-  acc_lim_th: 1.0
-  acc_lim_x: 0.5
-  acc_lim_y: 0.5
-  max_vel_x: 0.5
-  min_vel_x: 0.1
-  max_rotational_vel: 0.7
-  min_in_place_rotational_vel: 0.3
-  escape_vel: -0.1
-  holonomic_robot: false
-  xy_goal_tolerance: 0.05
-  yaw_goal_tolerance: 0.02
-  sim_time: 3
-  sim_granularity: 0.02
-  vx_samples: 10
-  vtheta_samples: 30
-  
-  meter_scoring: true
-  oscillation_reset_dist: 0.5
-  prune_plan: true
+  # Limiti di accelerazione (lineare e rotazionale)
+  acc_lim_th: 0.5  # Accelerazione angolare massima
+  acc_lim_x: 0.4  # Accelerazione lineare massima sull'asse X
+  acc_lim_y: 0.5  # Accelerazione lineare sull'asse Y (per robot olonomici)
+
+  # Velocità massime e minime
+  max_vel_x: 0.6  # Velocità lineare massima sull'asse X
+  min_vel_x: 0.1  # Velocità lineare minima sull'asse X
+  max_rotational_vel: 1.5  # Velocità rotazionale massima
+  min_in_place_rotational_vel: 0.1  # Velocità rotazionale minima
+
+  # Velocità di fuga quando si blocca
+  escape_vel: -0.2  # Velocità lineare in caso di blocco
+
+  # Configurazione del robot
+  holonomic_robot: false  # Indica se il robot può muoversi lateralmente
+
+  # Tolleranze per l'obiettivo
+  xy_goal_tolerance: 0.2  # Tolleranza per l'obiettivo XY
+  yaw_goal_tolerance: 0.1  # Tolleranza per l'obiettivo di angolo
+
+  # Parametri della simulazione
+  sim_time: 3 # Tempo di simulazione (secondi)
+  sim_granularity: 0.09  # Granularità della simulazione (metri)
+  vx_samples: 50  # Numero di campioni di velocità lineare
+  vtheta_samples: 50  # Numero di campioni di velocità rotazionale
+
+  # Altri parametri
+  meter_scoring: true  # Valutazione in metri
+  oscillation_reset_dist: 0.3  # Distanza di reset dell'oscillazione
+  prune_plan: true  # Indica se eliminare parti del percorso una volta superate
+
+  # Configurazione del footprint del robot
+  footprint:  # Footprint rettangolare
+  - [0.50, 0.50]  # Anteriore sinistro
+  - [0.50, -0.50]  # Anteriore destro
+  - [-0.50, -0.50]  # Posteriore destro
+  - [-0.50, 0.50]  # Posteriore sinistro
+

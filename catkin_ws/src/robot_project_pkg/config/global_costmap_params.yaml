@@ -1,24 +1,12 @@
-
 global_costmap:
   global_frame: "map"
   robot_base_frame: "base_link"
-  update_frequency: 5.0
-  publish_frequency: 5.0
-  width: 200 # Basato sulla dimensione della mappa
-  height: 100  # Basato sulla dimensione della mappa
-  resolution: 0.05 # Risoluzione della mappa
+  update_frequency: 2.0  # Frequenza di aggiornamento
+  publish_frequency: 1.0  # Frequenza di pubblicazione
+  resolution: 0.05  # Risoluzione
+  rolling_window: true  # Il costmap globale segue il robot
+  width: 100  # Larghezza del costmap
+  height: 100  # Altezza del costmap
 
-  static_map: true  # Usa la mappa dal map_server
-  rolling_window: true # Non segue il robot
-
-  # Inflazione e altre configurazioni del costmap
-  inflation_radius: 0.2
-  footprint:
-  - [0.5, 0.5]
-  - [0.5, -0.5]
-  - [-0.5, -0.5]
-  - [-0.5, 0.5]
-  footprint_padding: 0.5
-
-
-
+  # Layer di inflazione
+  inflation_radius: 0.4

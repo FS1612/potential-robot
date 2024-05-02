@@ -96,7 +96,7 @@ erratic( pose [ 0 13 0.000 180.000 ] name "era" color "blue")
 
 # throw in obstacles
 block(name "obstacle_red" color "red" pose [ -1 13 0.000 180.000 ])
-block(name "obstacle_purple" color "purple" pose [ 4 13 0.000 150.000 ])
+block(name "obstacle_purple" color "purple" pose [ 4 13.29 0.000 150.000 ])
 
 
 

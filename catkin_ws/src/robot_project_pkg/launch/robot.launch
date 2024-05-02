@@ -35,17 +35,36 @@
         <rosparam command="load" file="$(find robot_project_pkg)/config/base_local_planner_params.yaml" />
     </node>
    <!-- Avvia il nodo amcl per la localizzazione -->
-    <node pkg="amcl" type="amcl" name="amcl" output="screen">
-      <remap from="scan" to="base_scan" />
-      <param name="odom_model_type" value="diff"/>
-      <param name="odom_alpha1" value="0.2"/>
-      <param name="odom_alpha2" value="0.2"/>
-      <param name="odom_alpha3" value="0.2"/>
-      <param name="odom_alpha4" value="0.2"/>
-      <param name="odom_alpha5" value="0.2"/>
-      <param name="global_frame" value="map"/>
-      <param name="odom_frame" value="odom"/>
-    </node>
+<node pkg="amcl" type="amcl" name="amcl" output="screen">
+  <!-- Remapping del topic del laser -->
+  <remap from="scan" to="base_scan" />
+
+  <!-- Tipo di modello di odometria -->
+  <param name="odom_model_type" value="diff"/>
+
+  <!-- Parametri del modello di odometria -->
+  <param name="odom_alpha1" value="0.2"/>
+  <param name="odom_alpha2" value="0.2"/>
+  <param name="odom_alpha3" value="0.2"/>
+  <param name="odom_alpha4" value="0.2"/>
+  <param name="odom_alpha5" value="0.2"/>
+
+  <!-- Frame di riferimento -->
+  <param name="global_frame" value="map"/>
+  <param name="odom_frame" value="odom"/>
+  <param name="base_frame" value="base_link"/>
+
+  <!-- Parametri personalizzati per AMCL -->
+  <param name="min_particles" value="100"/>
+  <param name="max_particles" value="500"/>
+
+  <!-- Frequenze di aggiornamento -->
+  <param name="update_min_d" value="0.1"/>  <!-- Minima distanza per aggiornamento -->
+  <param name="update_min_a" value="0.1"/>  <!-- Minimo angolo ruotato per aggiornamento -->
+
+  <!-- Intervallo di resampling -->
+  <param name="resample_interval" value="2"/>  
+</node>
     
         
 
