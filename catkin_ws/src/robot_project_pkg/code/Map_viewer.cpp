@@ -37,7 +37,7 @@ public:
         map_initialized = false;
         odom_initialized = false;
 
-// Inizializza le posizioni a valori non validi
+        // Inizializza le posizioni a valori non validi -99999
         initial_position = ClickData{cv::Point(-99999, -99999), cv::Point(-99999, -99999), ros::Time(0)};
         goal_position = ClickData{cv::Point(-99999, -99999), cv::Point(-99999, -99999), ros::Time(0)};
         click_mode = SELECT_INITIAL_POSITION;
@@ -60,9 +60,7 @@ public:
         pose_msg.header.frame_id = "map";
         pose_msg.pose.pose.position.x = -initial_position.map_coords.x;
         pose_msg.pose.pose.position.y = -initial_position.map_coords.y;
-        //pose_msg.pose.pose.position.x = -(0+106.913*0.02)/2;
-        //pose_msg.pose.pose.position.y = -(0+49.3527 *0.02)/2;
-        pose_msg.pose.pose.position.z = 0;  // Nessuna componente Z, solo posizione 2D
+        pose_msg.pose.pose.position.z = 0;  
         pose_msg.pose.pose.orientation.w = 1.0;
         
          
@@ -78,8 +76,6 @@ public:
         goal_msg.goal.target_pose.header.frame_id = "map";  // Frame di riferimento del goal
         goal_msg.goal.target_pose.pose.position.x = -goal_position.map_coords.x;
         goal_msg.goal.target_pose.pose.position.y = -goal_position.map_coords.y;
-        //goal_msg.goal.target_pose.pose.position.x = 40;
-        //goal_msg.goal.target_pose.pose.position.y = 12;
         goal_msg.goal.target_pose.pose.position.z = 0;
         goal_msg.goal.target_pose.pose.orientation.w = 1.0;
 
@@ -113,10 +109,10 @@ private:
         return cv::Point(x_opencv, y_opencv);
     
     }
-
+    // Conversione coordinate OpenCv in Stage
    cv::Point opencvToStage(float x_open, float y_open, int map_width, int map_height, float resolution, float origin_x, float origin_y) {
-        float stage_x = (x_open - map_width / 2) * resolution + origin_x;
-        float stage_y = (y_open - map_height / 2) * resolution + origin_y;  // Inverti Y
+        float stage_x = (x_open - map_width / 2) /20;
+        float stage_y = (y_open - map_height / 2) /20;  
         return cv::Point(stage_x, stage_y);
     }
     
@@ -144,7 +140,7 @@ private:
         cv::Point opencv_coords(x, y);
         cv::Point map_coords = viewer->opencvToStage(x, y, map_width, map_height, resolution, origin_x, origin_y);
         cv::Point map_coords_adjusted(x, y);
-            map_coords_adjusted.x=(map_coords.x+106.913*0.02)/2;
+            map_coords_adjusted.x=(map_coords.x+106.913*0.05)/2;
             map_coords_adjusted.y=(map_coords.y+49.3527 *0.02)/2;
             
 
@@ -304,17 +300,17 @@ private:
         std::string degree_symbol = "\u00B0";  // Simbolo del grado in Unicode
         cv::rectangle(map_image, cv::Point(box_x, box_y), cv::Point(box_x + box_width, box_y + box_height), cv::Scalar(0, 255, 0), 2);
         
-        std::string current_position_text = "Robot Position: x=" + std::to_string(robot_x) +
-                                    ", y=" + std::to_string(robot_y) +
-                                    ", z=" + std::to_string(robot_z) +
-                                    ", yaw=" + std::to_string(yaw_degrees) + degree_symbol;
+        std::string current_position_text = "Robot Position: x=" + std::to_string(odom_msg->pose.pose.position.x) +
+                                    ", y=" + std::to_string(odom_msg->pose.pose.position.y) +
+                                    ", z=" + std::to_string(odom_msg->pose.pose.position.z) +
+                                    ", yaw=" + std::to_string(yaw_degrees) ;
         cv::putText(map_image, current_position_text, cv::Point(box_x + 10, box_y + 20), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 1);
         
         // Box informativo per l'initial position
         std::string initial_position_text = "Initial Position: ";
-        if (ros::Time::now() - initial_position.click_time < ros::Duration(10.0)) {
-        initial_position_text += "x=" + std::to_string(initial_position.opencv_coords.x) +
-                             ", y=" + std::to_string(initial_position.opencv_coords.y);
+        if (ros::Time::now() - initial_position.click_time < ros::Duration(40.0)) {
+        initial_position_text += "x=" + std::to_string(initial_position.map_coords.x) +
+                             ", y=" + std::to_string(initial_position.map_coords.y);
         } else {
         initial_position_text += "No click detected.";
         }
@@ -327,9 +323,9 @@ private:
 
         // Box informativo per il goal
         std::string goal_text = "Goal: ";
-        if (ros::Time::now() - goal_position.click_time < ros::Duration(10.0)) {
-        goal_text += "x=" + std::to_string(goal_position.opencv_coords.x) +
-                 ", y=" + std::to_string(goal_position.opencv_coords.y);
+        if (ros::Time::now() - goal_position.click_time < ros::Duration(40.0)) {
+        goal_text += "x=" + std::to_string(goal_position.map_coords.x) +
+                 ", y=" + std::to_string(goal_position.map_coords.y);
         } else {
         goal_text += "No click detected.";
         }

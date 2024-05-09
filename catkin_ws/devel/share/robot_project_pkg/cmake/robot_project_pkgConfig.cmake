@@ -116,7 +116,7 @@ if(NOT "/home/fra/gitHub/potential-robot/catkin_ws/src/robot_project_pkg/include
   endforeach()
 endif()
 
-set(libraries "robot_project_pkg;robot_controller")
+set(libraries "robot_project_pkg")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -185,7 +185,7 @@ foreach(t ${robot_project_pkg_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;joint_state_publisher_gui;roscpp;rviz;tf2;urdf;moveit_ros_planning;moveit_ros_planning_interface;moveit_core;sensor_msgs;stage_ros")
+set(depends "geometry_msgs;joint_state_publisher_gui;roscpp;rviz;tf2;sensor_msgs;stage_ros")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

@@ -4,5 +4,5 @@ Name: robot_project_pkg
 Description: Description of robot_project_pkg
 Version: 0.0.0
 Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lrobot_project_pkg -lrobot_controller
-Requires: geometry_msgs joint_state_publisher_gui roscpp rviz tf2 urdf moveit_ros_planning moveit_ros_planning_interface moveit_core sensor_msgs stage_ros
+Libs: -L${prefix}/lib -lrobot_project_pkg
+Requires: geometry_msgs joint_state_publisher_gui roscpp rviz tf2 sensor_msgs stage_ros

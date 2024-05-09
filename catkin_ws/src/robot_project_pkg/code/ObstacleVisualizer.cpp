@@ -14,15 +14,14 @@ public:
         scan_sub = nh.subscribe("/base_scan", 1, &ObstacleDrawer::scanCallback, this);
         odom_sub = nh.subscribe("/odom", 1, &ObstacleDrawer::odomCallback, this);
 
-        // Inizializza la mappa OpenCV con un buffer di 1000x1000 (adattabile) e colore nero
-        map_image = cv::Mat::zeros(1000, 1000, CV_8UC3); // 1000x1000, nero
-
+        // Inizializza la mappa OpenCV con un buffer di 1000x1000 ) e colore nero
+        map_image = cv::Mat::zeros(1000, 1000, CV_8UC3); 
         // Calcola il centro dell'immagine
         center_x = map_image.cols / 2;
         center_y = map_image.rows / 2;
 
         // Scala per conversione delle coordinate
-        map_scale = 20.0; // Adatta questa scala a seconda delle esigenze
+        map_scale = 20.0; 
         
         // Publisher per la mappa degli ostacoli
         obstacle_map_pub = nh.advertise<nav_msgs::OccupancyGrid>("/obstacle_map", 1);

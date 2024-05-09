@@ -1,8 +1,8 @@
 # generated from catkin/cmake/template/pkg.context.pc.in
 CATKIN_PACKAGE_PREFIX = ""
 PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/fra/gitHub/potential-robot/catkin_ws/src/robot_project_pkg/include".split(';') if "/home/fra/gitHub/potential-robot/catkin_ws/src/robot_project_pkg/include" != "" else []
-PROJECT_CATKIN_DEPENDS = "geometry_msgs;joint_state_publisher_gui;roscpp;rviz;tf2;urdf;moveit_ros_planning;moveit_ros_planning_interface;moveit_core;sensor_msgs;stage_ros".replace(';', ' ')
-PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lrobot_project_pkg;-lrobot_controller".split(';') if "-lrobot_project_pkg;-lrobot_controller" != "" else []
+PROJECT_CATKIN_DEPENDS = "geometry_msgs;joint_state_publisher_gui;roscpp;rviz;tf2;sensor_msgs;stage_ros".replace(';', ' ')
+PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lrobot_project_pkg".split(';') if "-lrobot_project_pkg" != "" else []
 PROJECT_NAME = "robot_project_pkg"
 PROJECT_SPACE_DIR = "/home/fra/gitHub/potential-robot/catkin_ws/devel"
 PROJECT_VERSION = "0.0.0"

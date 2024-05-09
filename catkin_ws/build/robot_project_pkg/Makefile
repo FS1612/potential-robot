@@ -78,17 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -135,6 +124,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/fra/gitHub/potential-robot/catkin_ws/build/CMakeFiles /home/fra/gitHub/potential-robot/catkin_ws/build/robot_project_pkg/CMakeFiles/progress.marks
@@ -166,21 +166,6 @@ preinstall/fast:
 depend:
 	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-robot_project_pkg/CMakeFiles/auto.dir/rule:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/auto.dir/rule
-.PHONY : robot_project_pkg/CMakeFiles/auto.dir/rule
-
-# Convenience name for target.
-auto: robot_project_pkg/CMakeFiles/auto.dir/rule
-
-.PHONY : auto
-
-# fast build rule for target.
-auto/fast:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/build
-.PHONY : auto/fast
 
 # Convenience name for target.
 robot_project_pkg/CMakeFiles/Mapviewer.dir/rule:
@@ -228,21 +213,6 @@ rviz_generate_messages_nodejs/fast:
 .PHONY : rviz_generate_messages_nodejs/fast
 
 # Convenience name for target.
-robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-
-# Convenience name for target.
-moveit_ros_manipulation_gencfg: robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-
-.PHONY : moveit_ros_manipulation_gencfg
-
-# fast build rule for target.
-moveit_ros_manipulation_gencfg/fast:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
-.PHONY : moveit_ros_manipulation_gencfg/fast
-
-# Convenience name for target.
 robot_project_pkg/CMakeFiles/rviz_generate_messages_py.dir/rule:
 	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/rviz_generate_messages_py.dir/rule
 .PHONY : robot_project_pkg/CMakeFiles/rviz_generate_messages_py.dir/rule
@@ -271,21 +241,6 @@ map_msgs_generate_messages_cpp: robot_project_pkg/CMakeFiles/map_msgs_generate_m
 map_msgs_generate_messages_cpp/fast:
 	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/build.make robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/build
 .PHONY : map_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
-.PHONY : robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
-
-# Convenience name for target.
-moveit_ros_planning_gencfg: robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
-
-.PHONY : moveit_ros_planning_gencfg
-
-# fast build rule for target.
-moveit_ros_planning_gencfg/fast:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build
-.PHONY : moveit_ros_planning_gencfg/fast
 
 # Convenience name for target.
 robot_project_pkg/CMakeFiles/rviz_generate_messages_cpp.dir/rule:
@@ -446,33 +401,6 @@ code/ObstacleVisualizer.cpp.s:
 	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/build.make robot_project_pkg/CMakeFiles/ObstacleVisualizer.dir/code/ObstacleVisualizer.cpp.s
 .PHONY : code/ObstacleVisualizer.cpp.s
 
-code/auto.o: code/auto.cpp.o
-
-.PHONY : code/auto.o
-
-# target to build an object file
-code/auto.cpp.o:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/code/auto.cpp.o
-.PHONY : code/auto.cpp.o
-
-code/auto.i: code/auto.cpp.i
-
-.PHONY : code/auto.i
-
-# target to preprocess a source file
-code/auto.cpp.i:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/code/auto.cpp.i
-.PHONY : code/auto.cpp.i
-
-code/auto.s: code/auto.cpp.s
-
-.PHONY : code/auto.s
-
-# target to generate assembly for a file
-code/auto.cpp.s:
-	cd /home/fra/gitHub/potential-robot/catkin_ws/build && $(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/code/auto.cpp.s
-.PHONY : code/auto.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -481,17 +409,13 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... test"
-	@echo "... auto"
 	@echo "... Mapviewer"
 	@echo "... rviz_generate_messages_eus"
 	@echo "... install"
 	@echo "... rviz_generate_messages_nodejs"
-	@echo "... moveit_ros_manipulation_gencfg"
 	@echo "... install/local"
 	@echo "... rviz_generate_messages_py"
 	@echo "... map_msgs_generate_messages_cpp"
-	@echo "... moveit_ros_planning_gencfg"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... rviz_generate_messages_cpp"
@@ -500,6 +424,7 @@ help:
 	@echo "... map_msgs_generate_messages_py"
 	@echo "... map_msgs_generate_messages_eus"
 	@echo "... map_msgs_generate_messages_nodejs"
+	@echo "... test"
 	@echo "... ObstacleVisualizer"
 	@echo "... code/Map_viewer.o"
 	@echo "... code/Map_viewer.i"
@@ -507,9 +432,6 @@ help:
 	@echo "... code/ObstacleVisualizer.o"
 	@echo "... code/ObstacleVisualizer.i"
 	@echo "... code/ObstacleVisualizer.s"
-	@echo "... code/auto.o"
-	@echo "... code/auto.i"
-	@echo "... code/auto.s"
 .PHONY : help
 
 

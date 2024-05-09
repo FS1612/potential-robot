@@ -2157,19 +2157,6 @@ flat_world_imu_node/fast:
 .PHONY : flat_world_imu_node/fast
 
 #=============================================================================
-# Target rules for targets named auto
-
-# Build rule for target.
-auto: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 auto
-.PHONY : auto
-
-# fast build rule for target.
-auto/fast:
-	$(MAKE) -f robot_project_pkg/CMakeFiles/auto.dir/build.make robot_project_pkg/CMakeFiles/auto.dir/build
-.PHONY : auto/fast
-
-#=============================================================================
 # Target rules for targets named Mapviewer
 
 # Build rule for target.
@@ -2209,19 +2196,6 @@ rviz_generate_messages_nodejs/fast:
 .PHONY : rviz_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named moveit_ros_manipulation_gencfg
-
-# Build rule for target.
-moveit_ros_manipulation_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moveit_ros_manipulation_gencfg
-.PHONY : moveit_ros_manipulation_gencfg
-
-# fast build rule for target.
-moveit_ros_manipulation_gencfg/fast:
-	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
-.PHONY : moveit_ros_manipulation_gencfg/fast
-
-#=============================================================================
 # Target rules for targets named rviz_generate_messages_py
 
 # Build rule for target.
@@ -2246,19 +2220,6 @@ map_msgs_generate_messages_cpp: cmake_check_build_system
 map_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/build.make robot_project_pkg/CMakeFiles/map_msgs_generate_messages_cpp.dir/build
 .PHONY : map_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named moveit_ros_planning_gencfg
-
-# Build rule for target.
-moveit_ros_planning_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moveit_ros_planning_gencfg
-.PHONY : moveit_ros_planning_gencfg
-
-# fast build rule for target.
-moveit_ros_planning_gencfg/fast:
-	$(MAKE) -f robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make robot_project_pkg/CMakeFiles/moveit_ros_planning_gencfg.dir/build
-.PHONY : moveit_ros_planning_gencfg/fast
 
 #=============================================================================
 # Target rules for targets named rviz_generate_messages_cpp
@@ -2376,6 +2337,32 @@ turtlebot3_manipulation_gui: cmake_check_build_system
 turtlebot3_manipulation_gui/fast:
 	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/turtlebot3_manipulation_gui.dir/build
 .PHONY : turtlebot3_manipulation_gui/fast
+
+#=============================================================================
+# Target rules for targets named moveit_ros_manipulation_gencfg
+
+# Build rule for target.
+moveit_ros_manipulation_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moveit_ros_manipulation_gencfg
+.PHONY : moveit_ros_manipulation_gencfg
+
+# fast build rule for target.
+moveit_ros_manipulation_gencfg/fast:
+	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
+.PHONY : moveit_ros_manipulation_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named moveit_ros_planning_gencfg
+
+# Build rule for target.
+moveit_ros_planning_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moveit_ros_planning_gencfg
+.PHONY : moveit_ros_planning_gencfg
+
+# fast build rule for target.
+moveit_ros_planning_gencfg/fast:
+	$(MAKE) -f turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make turtlebot3_manipulation/turtlebot3_manipulation_gui/CMakeFiles/moveit_ros_planning_gencfg.dir/build
+.PHONY : moveit_ros_planning_gencfg/fast
 
 # Help Target
 help:
@@ -2543,14 +2530,11 @@ help:
 	@echo "... shape_msgs_generate_messages_py"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
 	@echo "... flat_world_imu_node"
-	@echo "... auto"
 	@echo "... Mapviewer"
 	@echo "... rviz_generate_messages_eus"
 	@echo "... rviz_generate_messages_nodejs"
-	@echo "... moveit_ros_manipulation_gencfg"
 	@echo "... rviz_generate_messages_py"
 	@echo "... map_msgs_generate_messages_cpp"
-	@echo "... moveit_ros_planning_gencfg"
 	@echo "... rviz_generate_messages_cpp"
 	@echo "... rviz_generate_messages_lisp"
 	@echo "... map_msgs_generate_messages_lisp"
@@ -2560,6 +2544,8 @@ help:
 	@echo "... ObstacleVisualizer"
 	@echo "... turtlebot3_description_xacro_generated_to_devel_space_"
 	@echo "... turtlebot3_manipulation_gui"
+	@echo "... moveit_ros_manipulation_gencfg"
+	@echo "... moveit_ros_planning_gencfg"
 .PHONY : help
 
 

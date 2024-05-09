@@ -1,15 +1,21 @@
 costmap_common_params:
-  transform_tolerance: 0.2  # Tolleranza per le trasformazioni TF
-  map_type: costmap  # Tipo di costmap
-  track_unknown_space: true  # Consente di tracciare gli spazi sconosciuti
-  obstacle_range: 4.0  # Portata massima per rilevare ostacoli
-  raytrace_range: 4.0  # Portata per rimuovere ostacoli (clearing)
-  observation_sources: laser_scan
-  laser_scan:
-    data_type: LaserScan
-    topic: /base_scan
-    expected_update_rate: 5.0  # Frequenza di aggiornamento del laser
-    max_obstacle_height: 2.0  # Altezza massima degli ostacoli
-    min_obstacle_height: 1.0  # Altezza minima degli ostacoli
-    marking: true  # Consente di marcare gli ostacoli
-    clearing: true  # Consente di rimuovere ostacoli
+  robot_base_frame: "base_link"
+  transform_tolerance: 0.5
+
+  # Configurazione dello strato degli ostacoli
+  obstacle_layer:
+    max_obstacle_height: 2.0
+    origin_z: 0.0
+    z_resolution: 0.2
+    z_voxels: 10
+    track_unknown_space: true
+    unknown_threshold: 15
+    mark_threshold: 10
+    obstacle_range: 5
+    raytrace_range: 3.0
+
+  # Configurazione dello strato di inflazione
+  inflation_layer:
+    inflation_radius: 0.55
+    cost_scaling_factor: 10.0
+

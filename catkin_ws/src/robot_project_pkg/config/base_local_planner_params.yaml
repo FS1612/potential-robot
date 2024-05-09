@@ -21,8 +21,8 @@ TrajectoryPlannerROS:
   yaw_goal_tolerance: 0.1  # Tolleranza per l'obiettivo di angolo
 
   # Parametri della simulazione
-  sim_time: 3 # Tempo di simulazione (secondi)
-  sim_granularity: 0.09  # Granularità della simulazione (metri)
+  sim_time: 1 # Tempo di simulazione (secondi)
+  sim_granularity: 0.01  # Granularità della simulazione (metri)
   vx_samples: 50  # Numero di campioni di velocità lineare
   vtheta_samples: 50  # Numero di campioni di velocità rotazionale
 
@@ -37,4 +37,3 @@ TrajectoryPlannerROS:
   - [0.50, -0.50]  # Anteriore destro
   - [-0.50, -0.50]  # Posteriore destro
   - [-0.50, 0.50]  # Posteriore sinistro
-

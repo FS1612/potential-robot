@@ -32,7 +32,7 @@
         <rosparam command="load" file="$(find robot_project_pkg)/config/local_costmap_params.yaml"  />
 
         <!-- Carica i parametri del planner locale -->
-        <rosparam command="load" file="$(find robot_project_pkg)/config/base_local_planner_params.yaml" />
+        <rosparam command="load" file="$(find robot_project_pkg)/config/base_local_planner_params.yaml" ns="TrajectoryPlannerROS" />
     </node>
    <!-- Avvia il nodo amcl per la localizzazione -->
 <node pkg="amcl" type="amcl" name="amcl" output="screen">
@@ -42,12 +42,7 @@
   <!-- Tipo di modello di odometria -->
   <param name="odom_model_type" value="diff"/>
 
-  <!-- Parametri del modello di odometria -->
-  <param name="odom_alpha1" value="0.2"/>
-  <param name="odom_alpha2" value="0.2"/>
-  <param name="odom_alpha3" value="0.2"/>
-  <param name="odom_alpha4" value="0.2"/>
-  <param name="odom_alpha5" value="0.2"/>
+
 
   <!-- Frame di riferimento -->
   <param name="global_frame" value="map"/>
@@ -58,12 +53,19 @@
   <param name="min_particles" value="100"/>
   <param name="max_particles" value="500"/>
 
+
   <!-- Frequenze di aggiornamento -->
   <param name="update_min_d" value="0.1"/>  <!-- Minima distanza per aggiornamento -->
   <param name="update_min_a" value="0.1"/>  <!-- Minimo angolo ruotato per aggiornamento -->
 
   <!-- Intervallo di resampling -->
   <param name="resample_interval" value="2"/>  
+  
+  <!-- Parametri di convergenza -->
+  <param name="recovery_alpha_fast" value="0.1"/>
+  <param name="recovery_alpha_slow" value="0.001"/>
+  <param name="sigma_fast" value="0.02"/>
+  <param name="sigma_slow" value="0.005"/>
 </node>
     
         

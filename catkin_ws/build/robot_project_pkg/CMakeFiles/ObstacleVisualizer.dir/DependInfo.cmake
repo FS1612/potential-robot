@@ -23,7 +23,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/include/OGRE/Overlay"
   "/usr/include/OGRE"
-  "/usr/include/bullet"
   "/usr/include/opencv4"
   )
 
